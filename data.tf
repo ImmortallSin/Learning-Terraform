@@ -14,3 +14,8 @@ data "aws_ssm_parameter" "amzn2_linux" {
 data "aws_region" "currentregion" {
   name = "us-east-1"
 }
+
+#Explanation
+#The data source "aws_region" specifies the type of data source we're querying. In this case an AWS region. 
+#This data block queries information from the AWs region "us-east-1", enabling this terraform configuration to access details specifc to this region. 
+#Attributes of this data source can be referenced eleswhere within the configuration to give use to this quereied informaiton specific to the AWS region "us-east-1".check "
