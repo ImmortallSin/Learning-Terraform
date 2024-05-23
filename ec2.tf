@@ -1,7 +1,7 @@
 #Resource EC2 instance
 resource "aws_instance" "nginx1" {
   ami = nonsensitive(data.aws_ssm_parameter.amzn2_linux.value)
-  instance_type = var.typeofinstance
+  instance_type = var.type_of_instance
   subnet_id = aws_subnet.tfsubnet1.id
   vpc_security_group_ids = [ aws_security_group.nginx_sg.id ]
 

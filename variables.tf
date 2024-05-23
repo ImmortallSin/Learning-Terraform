@@ -18,7 +18,7 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
-variable "typeofinstance" {
+variable "type_of_instance" {
   type = string
   description = "Type of instance"
   default = "t3.micro"
