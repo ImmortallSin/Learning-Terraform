@@ -1,7 +1,7 @@
 #Resource VPC
 resource "aws_vpc" "tfvpc" {
-  cidr_block = "10.0.0.0/16"
-  enable_dns_hostnames = true
+  cidr_block = var.vpc_cidr
+  enable_dns_hostnames = var.vpc_hostname
 }
 
 #Explanaiton
@@ -24,9 +24,9 @@ resource "aws_internet_gateway" "tfgate" {
 
 
 resource "aws_subnet" "tfsubnet1"{
-    cidr_block = "10.0.0.0/24"
+    cidr_block = var.subnet_cidr
     vpc_id = aws_vpc.tfvpc.id
-    map_public_ip_on_launch = true
+    map_public_ip_on_launch = var.subnet_mapip
 }
 
 #Explanation
