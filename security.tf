@@ -1,21 +1,21 @@
 #Resource Nginx Security Group
 resource "aws_security_group" "nginx_sg" {
-  name = "nginx_sg"
+  name   = "nginx_sg"
   vpc_id = aws_vpc.tfvpc.id
 
   #HTTP access form anywhere
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   #Outbound internet access
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 

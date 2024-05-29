@@ -1,63 +1,63 @@
 variable "aws_access_key" {
-  type = string
+  type        = string
   description = "AWS Access Key"
 }
 
 variable "aws_secret_key" {
-  type = string
+  type        = string
   description = "AWS secret Key"
-  sensitive = true
-  
+  sensitive   = true
+
 }
 
 variable "aws_region" {
-  type = string
+  type        = string
   description = "AWS region to use for resources"
-  default = "us-east-1"
+  default     = "us-east-1"
 }
 
 variable "type_of_instance" {
-  type = string
+  type        = string
   description = "Type of instance"
-  default = "t3.micro"
+  default     = "t3.micro"
 }
 
 variable "vpc_cidr" {
-    type = string
-    description = "The VPC's cidr block"
-    default = "10.0.0.0/16"
+  type        = string
+  description = "The VPC's cidr block"
+  default     = "10.0.0.0/16"
 }
 
 variable "vpc_hostname" {
-  type = bool
+  type        = bool
   description = "Enables DNS hostnames in VPC"
-  default = true
+  default     = true
 }
 
 variable "subnet_cidr" {
-  type = string
+  type        = string
   description = "The subnet's cidr block"
-  default = "10.0.0.0/24"
+  default     = "10.0.0.0/24"
 }
 
 variable "subnet_mapip" {
-  type = bool
+  type        = bool
   description = "Map a public IP address for Subnet instances"
-  default = true
+  default     = true
 }
 
 variable "company" {
-  type = string
+  type        = string
   description = "Company name for resource tagging"
-  default = "Nebulous"
+  default     = "Nebulous"
 }
 
 variable "project" {
-  type = string
+  type        = string
   description = "Project name for resource tagging"
 }
 
 variable "billing_code" {
-  type = string
+  type        = string
   description = "Billing code for resource tagging"
 }

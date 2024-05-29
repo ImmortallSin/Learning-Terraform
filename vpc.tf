@@ -1,6 +1,6 @@
 #Resource VPC
 resource "aws_vpc" "tfvpc" {
-  cidr_block = var.vpc_cidr
+  cidr_block           = var.vpc_cidr
   enable_dns_hostnames = var.vpc_hostname
 
   tags = local.common_tags
@@ -27,12 +27,12 @@ resource "aws_internet_gateway" "tfgate" {
 #This configuration instructs AWS to create an Internet Gateway and attach it to the specified VPC "tfvpc". The Internet Gateway serves as a routing target internet-routable traffic from the VPC. 
 
 
-resource "aws_subnet" "tfsubnet1"{
-    cidr_block = var.subnet_cidr
-    vpc_id = aws_vpc.tfvpc.id
-    map_public_ip_on_launch = var.subnet_mapip
+resource "aws_subnet" "tfsubnet1" {
+  cidr_block              = var.subnet_cidr
+  vpc_id                  = aws_vpc.tfvpc.id
+  map_public_ip_on_launch = var.subnet_mapip
 
-    tags = local.common_tags
+  tags = local.common_tags
 }
 
 #Explanation

@@ -5,7 +5,7 @@ resource "aws_route_table" "myroutetbl" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.tfgate.id
   }
-  
+
   tags = local.common_tags
 }
 
@@ -26,8 +26,8 @@ resource "aws_route_table" "myroutetbl" {
 
 
 resource "aws_route_table_association" "myroutetbl_subnet1" {
-    subnet_id = aws_subnet.tfsubnet1.id
-    route_table_id = aws_route_table.myroutetbl.id
+  subnet_id      = aws_subnet.tfsubnet1.id
+  route_table_id = aws_route_table.myroutetbl.id
 }
 
 #Explanation
