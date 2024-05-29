@@ -5,6 +5,8 @@ resource "aws_route_table" "myroutetbl" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.tfgate.id
   }
+  
+  tags = local.common_tags
 }
 
 #Explanation

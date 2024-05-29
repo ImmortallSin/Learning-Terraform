@@ -2,6 +2,8 @@
 resource "aws_vpc" "tfvpc" {
   cidr_block = var.vpc_cidr
   enable_dns_hostnames = var.vpc_hostname
+
+  tags = local.common_tags
 }
 
 #Explanaiton
@@ -13,6 +15,8 @@ resource "aws_vpc" "tfvpc" {
 
 resource "aws_internet_gateway" "tfgate" {
   vpc_id = aws_vpc.tfvpc.id
+
+  tags = local.common_tags
 }
 
 #Explanation
@@ -27,6 +31,8 @@ resource "aws_subnet" "tfsubnet1"{
     cidr_block = var.subnet_cidr
     vpc_id = aws_vpc.tfvpc.id
     map_public_ip_on_launch = var.subnet_mapip
+
+    tags = local.common_tags
 }
 
 #Explanation

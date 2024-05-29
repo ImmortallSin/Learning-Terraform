@@ -1,8 +1,6 @@
 variable "aws_access_key" {
   type = string
   description = "AWS Access Key"
-  sensitive = true
-
 }
 
 variable "aws_secret_key" {
@@ -46,4 +44,20 @@ variable "subnet_mapip" {
   type = bool
   description = "Map a public IP address for Subnet instances"
   default = true
+}
+
+variable "company" {
+  type = string
+  description = "Company name for resource tagging"
+  default = "Nebulous"
+}
+
+variable "project" {
+  type = string
+  description = "Project name for resource tagging"
+}
+
+variable "billing_code" {
+  type = string
+  description = "Billing code for resource tagging"
 }
