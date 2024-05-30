@@ -1,10 +1,10 @@
 #Providers Block
-provider "aws" {
-  shared_config_files      = ["~/.aws/config"]
-  shared_credentials_files = ["~/.aws/credentials"]
-  region                   = "us-east-1"
-  profile                  = "zuko"
-}
+#provider "aws" {
+#  shared_config_files      = ["~/.aws/config"]
+#  shared_credentials_files = ["~/.aws/credentials"]
+#  region                   = "us-east-1"
+#  profile                  = "zuko"
+#}
 
 #Explanation
 #The keyword provider followed by the label "aws" declares that Terraform will use the AWS provider plugin to manage resources.
@@ -15,9 +15,8 @@ provider "aws" {
 
 
 #A more dynamic providers block with the inclusion of input variables
-#provider "aws" {
-#  access_key = var.aws_access_key
-#  secret_key = var.aws_secret_key
-#  region = var.aws_region 
-#  profile = "zuko"
-#}
+provider "aws" {
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+  region     = var.aws_region
+}
